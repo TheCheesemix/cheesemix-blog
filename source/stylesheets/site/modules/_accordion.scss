@@ -1,0 +1,152 @@
+@import "../../neat/neat";
+@import "../../bourbon/bourbon";
+
+
+// Hero Grid Columns and Containers
+
+
+$medium-large-grid: (
+  media: "(max-width: 1200px)",
+);
+
+
+$medium-grid: (
+  media: "(max-width: 975px)",
+); 
+
+$small-grid: (
+  media: "(max-width: 800px)",
+);
+
+
+
+
+.faq a {
+    color: rgb(255, 196, 0) !important;
+}
+
+button {
+
+    &.accordion {
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #ececec;
+    font-weight: bold;
+    text-align: center;
+    line-height: 28px;
+    outline: none;
+    transition: 0.4s;
+    &.big {
+        background-color: #f9f9f9;
+        padding: 8vh 0;
+        font-size: 2.2rem;
+    }
+    &.mini {
+        background-color: #fff;
+        margin: 4px auto;
+        padding: 2vh 5vh;
+        font-size: 1.2rem;
+        box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.08);
+    }
+    &.product {
+        background-color: #fff;
+        margin: 4px auto;
+        padding: 3vh 5vh;
+        font-size: 1.2rem;
+        border: 5px solid #f2f2f2;
+        border-radius: 5px;
+        box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.08);
+        &:hover {
+            border: 5px solid #ffc400;
+            border-radius: 5px;
+        }
+      }
+    }
+    &.accordion:after {
+        content: '\f107';
+        font-size: 1.5rem;
+        font-family: FontAwesome;
+        color: #F4C013;
+        font-weight: bold;
+        text-align: center;
+        margin-left: 5px;
+    }
+    &.accordion.active {
+        border-radius: 5px;
+        border-color: #f2f2f2;
+        border-style: solid;
+        border-width: 5px 5px 0px 5px;
+        margin: 0px auto;
+        box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.08);
+    }
+    &.accordion.active:after {
+        content: '\f106';
+        font-size: 1.5rem;
+        font-family: FontAwesome;
+        color: #F4C013;
+        font-weight: bold;
+        text-align: center;
+        margin-left: 5px;
+    }
+    @include grid-media($small-grid){
+        &.accordion.mini {
+            font-size: 1rem;
+        }  
+    }
+
+}
+
+
+/* Style the accordion panel. Note: hidden by default */
+
+.panel {
+        padding: 5vh 9vh;
+        background-color: #f9f9f9;
+        display: none;
+        max-width: 62.5rem;
+        margin: 0 auto;
+     &.products {
+        padding: 0vh 0vh;
+        max-width: 100%;
+        border-color: #fff;
+        border-style: solid;
+        border-width: 0px 5px 0px 5px;
+        box-shadow: 0px 3px 3px 3px rgba(0,0,0,0.03);
+    }
+    .heading-image {
+        img {
+             width: 50%;
+             height: auto;
+        }
+    }
+     p {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 28px;
+        color: #282538;
+    }
+    h4 {
+        font-weight: bold;
+        font-size: 1.4rem;
+        padding: 0 0 5px 0;
+        color: #444444;
+        margin: 0;
+    }
+    @include grid-media($small-grid){
+        padding: 4vh 3vh;
+        h4 {
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 0 0 5px 0;
+            color: #969696;
+            margin: 0;
+         }
+    }
+}
+
+
+.accordion-pd {
+    padding: 2.5vh 0;
+}

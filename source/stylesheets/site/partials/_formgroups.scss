@@ -1,0 +1,16 @@
+@import '../modules/contentSquares';
+
+.form-group {
+    position: relative;
+    font-size: 16px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 300px;
+    margin: 0;
+    padding: 10px 0;
+    @include grid-media($medium-large-grid){
+    	width: 100%;
+    	max-width: initial;
+    }
+}

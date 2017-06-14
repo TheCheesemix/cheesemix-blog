@@ -1,0 +1,21 @@
+
+
+
+.container {
+	width: 100%;
+	max-width: 1200px;
+	padding: 0 10em;
+	margin: 0 auto;
+	&.stream {
+	    width: 100%;
+	   	max-width: none;
+	    padding: 0 6em;
+	    margin: 0 auto;
+	}
+	.postContent {
+		margin: 0 auto;
+		img {
+			width: 100%;
+		}
+	}
+}

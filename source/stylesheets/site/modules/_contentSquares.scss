@@ -1,0 +1,1155 @@
+@import "../../neat/neat";
+@import "../../bourbon/bourbon";
+
+@import '../partials/media';
+
+
+// Hero Grid Columns and Containers
+
+
+$grid--ones: (
+  columns: 1,
+  gutter: 10px,
+);
+
+.grid--ones {
+  @include grid-container($grid--ones);
+}
+
+
+.legal-main {
+    background: #f9f9f9;
+}
+ 
+
+.full-width-section {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    &.moments {
+        background: #eef1f6;
+        padding: 8vh 10vh;
+    }
+    &.fast-fact {
+        background: #eef1f6; 
+        padding: 6vh 20vh;
+    }
+    &.hero {
+        padding: 15vh 20vh;
+        background: #ffffff;
+    }
+    &.order-cube {
+        border-top: 1px solid #f2f2f2;
+        border-bottom: 1px solid #f2f2f2;
+        background: #f9f9f9;
+    }
+    &.legal {
+        background: #f9f9f9;
+    }
+    &.we-care {
+        border-top: 1px solid #f2f2f2;
+        border-bottom: 1px solid #f2f2f2;
+        background: #fff;
+    }
+    &.newsletter-signup {
+        background: #489A93;
+    }
+    &.quality {
+        background: #ffffff 
+        url(https://cheesemix.imgix.net/assets/images/site/hero-quality-barkham-blue.png) center;
+        background-size: cover;
+    }
+    &.our-story {
+        background: #ffffff
+        url(https://cheesemix.imgix.net/assets/images/site/Our-Story-Grass-Header.png) center;
+        background: cover;
+    }
+    &.openness {
+        background: #ffffff 
+        url(https://cheesemix.imgix.net/assets/images/site/hero-open-lord-london.png) center;
+        background-size: cover;
+    }
+    &.howitworks{
+        background: #ffffff
+        url(https://cheesemix.imgix.net/assets/images/site/hero-how-it-works.png) center;
+        background-size: cover;
+    }
+    &.cheesecube{
+        background: #ffffff
+        url(https://cheesemix.imgix.net/assets/images/site/cheesecube-header.jpg) center;
+        background-size: cover;
+    }
+    @include grid-media($medium-large-grid){
+        &.hero {
+            padding: 10vh 20vh;
+        }
+        &.fast-fact {
+            padding: 2vh 8vh;
+        }
+        &.moments {
+            padding: 0 3vh;
+        }       
+    }
+    @include grid-media($small-grid){
+        &.hero {
+            padding: 8vh 4vh;
+        }
+        &.fast-fact {
+            padding: 2vh 1.5vh;
+        }      
+    }
+}
+
+
+
+
+.full-width-grid--ones__a-single-column {
+    @include grid-column(1, $grid--ones);
+    @include grid-media($small-grid){
+    @include grid-collapse;
+        margin-top: 10px;
+
+    }
+}
+
+.hero__column {
+    color: #282538;
+}
+
+.fast_fact__column {
+    color: #282538;
+}
+
+
+.hero-content {
+    text-align: center;
+    &.white {
+        color: #ffffff;
+    }
+    h1 {
+        font-size: 2.8rem;
+        font-weight: bold;
+    }
+     h2 {
+        font-size: 2.2em;
+        font-weight: 200;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+     hr {
+        margin: 30px auto;
+        width: 150px;
+        border-top: 2px solid #FFC400;
+    }
+    @include grid-media($medium-large-grid){
+        h1 {
+            font-size: 2.2rem;
+        }
+    }
+    @include grid-media($small-grid){
+        h1 {
+            font-size: 1.9rem;
+        }
+        h2 {
+            font-size: 1.5em;
+        }
+    }
+}
+
+
+.order-cube-content {
+    width: 100%;
+    padding: 7vh 2vh;
+    min-width: 150px;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+    &.home {
+        padding: 15vh 2vh;
+    }
+    h2 {
+        font-size: 2.6em;
+    }
+    img { 
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+        margin: 25px auto;
+    }
+    @include grid-media($medium-large-grid){
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+    @include grid-media($small-grid){
+        &.home {
+            padding: 10vh 2vh;
+        }
+    }
+}
+
+
+
+.legal-content {
+    width: 100%;
+    min-width: 150px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+ 
+    &.main {
+        padding: 10vh 0 5vh 0;
+    }
+    &.text-left {
+        text-align: left;
+    }
+    &.inline {
+        text-align: left;
+        padding: 10em 0;
+        a {
+            color: #282538;
+            :hover {
+                color: #78787b;
+            }
+        }
+
+    }
+    h1 {
+        font-size: 2.9rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .heading {
+        padding: 0 1em;
+        p { 
+            margin-bottom: 50px;
+        }
+    }
+    p {
+        font-size: 1.2rem;
+        line-height: 2rem;
+
+    }
+    .main-legal {
+         img {
+            width: 100%;
+        }
+    }
+    img { 
+        text-align: center;
+        width: 35%;
+        max-width: 500px;
+        margin: 10px auto;
+    }
+    @include grid-media($medium-large-grid){
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.3rem;
+        }
+        .main-legal {
+            img {
+                width: 60%;
+            }
+         }
+        img { 
+            width: 35%;
+      }
+    }
+    @include grid-media($small-grid){
+        &.main {
+            padding: 5vh 2vh;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+        img { 
+            width: 50%;
+      }
+
+    }
+}
+
+
+
+.care-content {
+    width: 100%;
+    padding: 7vh 2vh;
+    min-width: 150px;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+    h2 {
+        font-size: 2.6em;
+    }
+    p {
+        font-size: 1.4rem;
+        line-height: 2.5rem;
+    }
+    img {
+        width: 95px;
+    }
+    @include grid-media($medium-large-grid){
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+    @include grid-media($small-grid){
+        p {
+            font-size: 1rem;
+            line-height: 1.6rem;
+        }
+    }
+}
+
+
+.newsletter-content {
+    width: 100%;
+    padding: 5vh 1vh;
+    min-width: 150px;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+    h2 {
+        font-size: 1.8em;
+        font-weight: 400;
+        color: #fff;
+    }
+    @include grid-media($medium-large-grid){
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+
+// Box Grid Columns and Containers
+
+
+$grid--thirds: (
+  columns: 3,
+  gutter: 10px,
+);
+
+.grid--thirds {
+  @include grid-container($grid--thirds);
+}
+
+
+
+.three-squares {
+    width: 100%;
+    float: left;
+    border-radius: 3px;
+    background: #f3f2f2;
+    overflow: hidden;
+    position: relative;
+    &.home {
+        background: #ffffff;
+        padding: 4vh 10vh;
+    }
+    &.marketing {
+        background: #f3f2f2;
+        padding: 4vh 10vh;
+    }
+    &.marketing-home {
+        background: #f8f8f8;
+        padding: 4vh 20vh;
+    }
+    @include grid-media($medium-grid){
+        &.home {
+            background: #ffffff;
+            padding: 4vh 1vh;
+        }
+        &.marketing {
+            padding: 4vh 1vh;
+        }
+        &.marketing-home {
+            padding: 4vh 1vh;
+        }
+    }
+    @include grid-media($small-grid){
+        &.home {
+          background: #ffffff;
+          padding: 4vh 10vh;
+        }
+        &.marketing {
+          padding: 2vh 4vh;
+        }
+        &.marketing-home {
+          padding: 2vh 4vh;
+        }
+    }
+}
+
+.custom-grid--thirds__a-single-column {
+    @include grid-column(1, $grid--thirds);
+    @include grid-media($small-grid){
+        @include grid-collapse;
+        margin-top: 10px;
+
+    }
+}
+
+.marketing__column--fancy {
+    background-color: #fff;
+    box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.08);
+    color: #fff;
+}
+
+.marketing-home__column--fancy {
+    color: #fff;
+    border: 2px solid #f1f1f1;
+    background: #fff;
+    border-radius: 4px;
+}
+
+
+.example__column--empty {
+    height: 25rem;
+
+}
+
+.mix-heads {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.square-content {
+    position: relative;
+    color: #000;
+    text-align: center;
+    margin: 0 auto;
+    &.home {
+        padding: 0 1vh;
+        min-width: 250px;
+        max-width: 300px;
+        margin: 0 auto;
+        h2 {
+        font-size: 1.5rem;
+        }
+    }
+    &.marketing {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0 5vh;
+        hr {
+            margin: 30px auto;
+        }
+    }
+    h2 {
+        font-size: 1.8rem;
+        margin: 0 auto;
+    }
+    p {
+        font-size: 1rem;
+        font-weight: 200;
+    }
+    hr {
+        border-top: 1px solid #FFC400;
+        width: 100%;
+    }
+    img {
+        width: 100%;
+        max-width: 200px;
+    }
+
+}
+
+
+
+
+// Square Grid Columns and Containers
+
+$grid--twos: (
+  columns: 12,
+  gutter: 0px,
+  direction: ltr,
+);
+
+.grid--twos{
+  @include grid-container($grid--twos);
+}
+
+
+.full-width-container {
+    width: 100%;
+    float: left;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.white-column {
+    background-color: #fff;
+    color: #fff;
+}
+
+.dark-column {
+    background-color: #100e17;
+    color: #fff;
+}
+
+.cream-column {
+    background-color: #fff9f3; 
+}
+
+
+.dark-cream-column {
+    background-color: #FFF4DE; 
+    img {
+        width: 100%;
+        max-width: 500px;
+        min-width: 150px;
+        height: 100%;
+        text-align: center;
+        padding: 0vh;
+        margin: 0vh auto;
+    }
+}
+
+
+.grid-two-single-column {
+    @include grid-column(6, $grid--twos);
+    height: 700px;
+    &.origin {
+        background: url(https://cheesemix.imgix.net/assets/images/site/origin-lord-london.png) center;
+        background-size: cover;  
+    }    
+    &.history {
+        background: url(https://cheesemix.imgix.net/assets/images/site/high-weald-history.png) center;
+        background-size: cover;   
+    }
+    &.tracked {
+        background-color: rgb(228, 242, 234);
+        background-size: cover;
+    }
+    &.source {
+        background: url(https://cheesemix.imgix.net/assets/images/site/Source.png) center;
+        background-size: cover;
+    }
+    &.method {
+        background: url(https://cheesemix.imgix.net/assets/images/site/methods.png) center;
+        background-size: cover;
+    }
+    &.tested {
+        background: url(https://cheesemix.imgix.net/assets/images/site/tested.png) center;
+        background-size: cover;
+    }
+    &.chooseCube {
+        background: url(https://cheesemix.imgix.net/assets/images/site/CheeseLine.jpg) center;
+        background-size: cover;
+    }
+    &.plan {
+        background: url(https://cheesemix.imgix.net/assets/images/site/plan.jpg) center;
+        background-size: cover;
+    }
+    &.delivery {
+        background: url(https://cheesemix.imgix.net/assets/images/site/delivery.jpg) center;
+        background-size: cover;
+    }
+    &.open-prov {
+        background-color: #e09d84;
+        background-size: cover;   
+    }
+    &.everyone {
+        background: url(https://cheesemix.imgix.net/assets/images/site/tested.png) center;
+        background-size: cover;
+    }
+    &.quality {
+        background: url(https://cheesemix.imgix.net/assets/Marble_Slab1.jpg) center;
+        background-size: cover;
+    }
+    &.woolcool {
+        background:
+        url(https://cheesemix.imgix.net/assets/images/site/cheesecube-woolcool.jpg) center;
+        background-size: cover;
+    }
+    &.open-cube {
+        background:
+        url(https://cheesemix.imgix.net/assets/images/site/cheesecube-open.jpg) center;
+        background-size: cover;
+    }
+    &.table {
+        background:
+        url(https://cheesemix.imgix.net/assets/images/site/cheesecube-table.jpg) center;
+        background-size: cover;
+    }
+    &.packing {
+        background:
+        url(https://cheesemix.imgix.net/assets/images/site/cheesecube-bag-it.jpg) center;
+        background-size: cover;
+    }
+    &.friends {
+        background:
+        url(https://cheesemix.imgix.net/assets/images/site/Our-Story-Devon-Family-Friends.png) center;
+        background-size: cover;
+    }
+    &.support {
+        background:
+        url(https://cheesemix.imgix.net/assets/images/site/Supporting.jpg) center;
+        background-size: cover;
+    }
+    &.ethical {
+        background:
+        url(https://cheesemix.imgix.net/assets/images/site/Ethical.png) center;
+        background-size: cover;
+    }
+    &.mobile {
+        display: none;
+    }
+    &.desktop {
+        display: inline-block;
+    }
+    @include grid-media($medium-grid) {
+        @include grid-collapse;
+        &.auto-height {
+             height: auto;
+        }
+    }
+    @include grid-media($small-grid){
+    @include grid-collapse;
+        height: 550px;
+         &.mobile {
+           display: inline-block;
+        }
+        &.desktop {
+            display: none;
+        }
+        &.origin { 
+            height: 300px;
+        }    
+        &.history { 
+            height: 300px; 
+        }
+        &.tracked {
+            height: 300px; 
+        }
+        &.source { 
+            height: 300px;
+        }    
+        &.methods { 
+            height: 300px; 
+        }
+        &.tested {
+            height: 300px; 
+        }
+        &.chooseCube {
+            height: 300px; 
+        }
+        &.plan {
+            height: 300px;
+        }
+        &.delivery {
+            height: 300px; 
+        }
+        &.open-prov {
+            height: auto; 
+        }
+        &.everyone {
+            height: 300px;
+        }
+        &.quality {
+            height: 300px; 
+        }
+        &.process {
+            height: auto;
+        }
+    }
+}
+
+
+.inner-content {
+    position: relative;
+    float: left;
+    color: #000;
+    &.text {
+        padding: 0vh 8vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &.product-details {
+        padding: 10vh 8vh;
+        h1 {
+            font-weight: 200;
+        }
+        p { 
+            font-size: 1.3rem;
+            line-height: 2rem;
+        }
+    }
+    &.left-text {
+        color: #000;
+        padding: 5vh 5vh;
+        h2 {
+            text-align: center;
+        }
+    }
+    &.white {
+        color: #fff;
+    }
+    &.image {
+        margin: 5vh auto;
+        padding: 3vh;
+        float: none;
+        text-align: center; 
+    }
+    &.center {
+         text-align: center;
+    }
+    h2 {
+         font-size: 2.5rem;
+         font-weight: 400;
+    }
+    p {
+        font-size: 1.5rem;
+        font-weight: 200;
+    }
+    @include grid-media($medium-large-grid){
+        padding: 0vh 5vh;
+        h2 {
+            font-size: 1.5rem;
+        }    
+        p {
+            font-size: 1.2rem;
+            font-weight: 200;
+        }
+        &.product-details {
+            padding: 5vh 4vh;
+            h1 {
+                font-size: 1.8rem;
+                font-weight: 200;
+            }
+            p { 
+                font-size: 1.1rem;
+                line-height: 2rem;
+            }
+        }
+    }
+    @include grid-media($medium-grid){
+    }
+    @include grid-media($small-grid){
+        padding: 5vh 5vh;
+        &.image {
+             margin: 2vh;
+        }
+
+    }
+}
+
+
+.box {
+    top: 90%;
+    min-width: 200px;
+    width: 95%;
+    position: relative;
+    float: left;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.08);
+    height: 115px;
+    @include grid-media($small-grid){
+        top: 80%;
+        width: 85%;
+        height: 80px;
+    }
+}
+
+
+.box-container {
+    margin: 10vh auto;
+    .big {
+        height: 150px;
+        width: auto;
+        min-width: 250px;
+        max-width: 750px;
+        margin: 10px 25px;
+        background: #fff;
+        text-align: center;
+        box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.08);
+        color: #000;
+        .left {
+            text-align: left;
+            margin: 15px 0 0 30px;
+            width: 50%;
+        }
+        .image {
+            background-size: cover;
+            width: 40%;
+            height: 150px;
+            float: right;
+            &.one {
+                background: url(https://cheesemix.imgix.net/assets/images/site/origin-small.png) center;
+
+            }
+            &.two {
+                background: url(https://cheesemix.imgix.net/assets/images/site/ingredients-small.png) center;
+            }
+            &.three {
+                background: url(https://cheesemix.imgix.net/assets/images/site/history-small.png) center;       
+            }
+        }
+    }
+     @include grid-media($small-grid){
+        margin: 3vh;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Split Pane Columns and Containers
+
+$grid--pane: (
+  columns: 12,
+  gutter: 0px,
+);
+
+.grid--pane{
+  @include grid-container($grid--pane);
+}
+
+
+.pane-container {
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.pane-column {
+    background-color: #fff;
+    color: #fff;
+}
+
+
+.pane-single-column {
+    height: 750px;
+    &.home-pane {
+        @include grid-column(5, $grid--pane);
+        margin-left: 0px;
+        min-height: 1100px;
+        height: 100vh;
+        float: left;
+        z-index: 1;
+        word-wrap: break-word;
+        padding: 20vh 0;
+        border-bottom: 1px solid #f2f2f2;
+        background-color: #f9f9f9;
+    }
+    &.home-image {
+        @include grid-column(7, $grid--pane);
+        overflow: hidden;
+        min-height: 1100px;
+        height: 100vh;
+        background: url(https://cheesemix.imgix.net/assets/images/pilot-line.jpg) center;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+    } 
+    &.login-pane {
+        margin-left: 0px;
+        height: 100%;
+        float: left;
+        z-index: 1;
+        word-wrap: break-word;
+        padding: 20vh 0;
+        border-bottom: 1px solid #f2f2f2;
+    }   
+    &.login-image {
+        overflow: hidden;
+        height: 100%;
+        background: url(https://cheesemix.imgix.net/assets/images/pilot-line.jpg) center;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+    }
+    @include grid-media($small-large-grid){
+    @include grid-collapse;
+        &.home-pane { 
+             @include grid-column(6, $grid--pane);
+        }   
+        &.home-image { 
+             @include grid-column(6, $grid--pane);
+        }    
+    }
+    @include grid-media($medium-grid){
+    @include grid-collapse; 
+        &.login-content { 
+            height: 300px; 
+        }
+        &.login-pane {
+         display: none;
+        }
+    }
+    @include grid-media($small-large-grid){
+    @include grid-collapse;
+        &.home-pane { 
+            width: 100%;
+            max-width: initial;
+            height: 950px;
+            padding: 10vh 2vh;
+            background: url(https://cheesemix.imgix.net/assets/images/pilot-line.jpg) center;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+        }   
+        &.home-image { 
+         display: none;
+        }    
+        &.signup-content { 
+            height: 300px; 
+        }
+        &.signup-pane {
+         display: none;
+        }
+    }
+    @include grid-media($small-grid){
+    @include grid-collapse;
+        &.home-pane { 
+            width: 100%;
+            max-width: initial;
+            height: 600px;
+            padding: 4vh 2vh;
+            background: url(https://cheesemix.imgix.net/assets/images/pilot-line.jpg) center;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+        }   
+        &.home-image { 
+         display: none;
+        }    
+        &.login-content { 
+            height: 300px; 
+        }
+        &.login-pane {
+         display: none;
+        }
+    }
+}
+
+
+
+.pane-content {
+    padding: 5vh 3vh;
+    text-align: center;
+    overflow-y: hidden;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+        h1 {
+            font-size: 1.8rem;
+        }
+        .yellow {
+            color: #ffc400;
+        }
+        p {
+            font-size: 1.6rem;
+            line-height: 2rem;
+            font-weight: 200;
+        }
+        a {
+
+        }
+        i.fa {
+            font-size: 2.5rem;
+        }
+        .circle-yellow {
+            background-color: #ffc400;
+            border-radius: 8px;
+            padding: 3px 10px;
+        }
+        .circle-gray {
+            background-color: #f2f2f2;
+            color: #282538;
+            border-radius: 8px;
+            padding: 3px 10px;
+        }
+        .smallText {
+            margin: 0 auto;
+            min-width: 150px;
+            width: 100%;
+            max-width: 350px;
+            h2 {
+                font-size: 1.2rem;
+                color: #ffc400;
+                margin: 0 auto;
+            }
+            p {
+                font-size: 0.9rem;
+                line-height: 1.4rem;
+            }
+            hr {
+                border: 1px solid #ffc400;
+            }
+            .home--pane-down-circle {
+                width: 40px;
+                height: 40px;
+                background: #282538;
+                border-radius: 50%;
+                display: flex;
+                color: #fff;
+                justify-content: center;
+                align-items: center;
+                margin: 5px auto;
+                -webkit-transition: opacity 0.25s;
+                -moz-transition: opacity 0.25s;
+                -o-transition: opacity 0.25s;
+            }
+        }
+    @include grid-media($large-grid){
+        padding: 10vh 4vh;
+        h1 {
+            font-size: 1.9rem;
+        }
+    }
+    @include grid-media($medium-large-grid){
+        padding: 10vh 5vh;
+        h1 {
+            font-size: 1.4rem;
+        }    
+        p {
+            font-size: 1.3rem;
+        }
+
+    }
+
+    @include grid-media($small-large-grid){
+        background-color: #ffffff;
+        margin-top: 10vh;
+        padding: 2vh 3vh;
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            font-size: 1.6rem;
+            line-height: 2rem;
+        }
+    }
+    @include grid-media($extra-small-grid){
+        h1 {
+            font-size: 1.3rem;
+        }  
+    }
+    @include grid-media($small-grid){
+        p {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+
+
+
+.flex-square {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 895px;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+.square {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-background: #ffffff;
+  $card-header-background: $card-background;
+  $card-margin: 1em;
+  $card-image-hover-opacity: 0.7;
+  $card-image-hover-color: #F8F2B4;
+
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+    flex-basis: 14em;
+    flex-grow: 1;
+    margin: 0 1em 1.5em 1em;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+
+  .flex-image {
+    background-color: #64dbad;
+    height: 150px;
+    max-height: 150px;
+    overflow: hidden;
+
+    img {
+      @include border-top-radius($base-border-radius);
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+    }
+  }
+
+  .flex-header {
+    background-color: #64DBAD;
+    color: #fff;
+    border-bottom: $card-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: ($base-spacing / 3) ($base-spacing / 2);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .flex-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: ($base-spacing / 2) ($base-spacing / 2);
+
+    p {
+      margin: 0 0 ($base-spacing / 2);
+    }
+  }
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+
+    img {
+      opacity: $card-image-hover-opacity;
+    }
+  }
+
+  &:active {
+    background-color: $card-background;
+
+    .card-header {
+      background-color: $card-background;
+    }
+  }
+}

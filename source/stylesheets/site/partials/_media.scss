@@ -1,0 +1,34 @@
+
+
+$extra-extra-large-grid: (
+   media: "(min-width: 1500px)",   
+);
+
+$extra-large-grid: (
+   media: "(min-width: 1300px)",   
+);
+
+$large-grid: (
+   media: "(min-width: 1200px)",   
+);
+
+$medium-large-grid: (
+  media: "(max-width: 1200px)",
+);
+
+$small-large-grid: (
+  media: "(max-width: 1000px)",
+);
+
+$medium-grid: (
+  media: "(max-width: 975px)",
+); 
+
+$small-grid: (
+  media: "(max-width: 800px)",
+);
+
+$extra-small-grid: (
+  media: "(max-width: 500px)",
+);
+ 

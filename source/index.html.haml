@@ -1,0 +1,12 @@
+---
+title: Contentful Middleman Blog
+---
+
+
+
+
+
+.container.stream
+  .postContent
+    - data.site.blogPost.each do |post|
+      = partial "post", locals: { post: post }

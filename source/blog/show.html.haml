@@ -1,0 +1,8 @@
+.container
+	%h2= @title
+	.postContent= Markdown.new(@body).to_html
+
+	- if @comments === true
+		%h5.comments comments are enabled
+
+	= link_to '< back to the homepage', "/"

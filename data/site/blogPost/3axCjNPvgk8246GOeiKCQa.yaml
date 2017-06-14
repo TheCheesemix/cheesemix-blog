@@ -1,0 +1,34 @@
+---
+:id: 3axCjNPvgk8246GOeiKCQa
+:slug: tasting-this-cheeseblog
+:featuredImage:
+  :title: headingtest
+  :url: "//images.contentful.com/meg1xu0a1no8/19I1P8E6twYcCKCeqAW4G6/b63b3b65f006fd5b0f160f43f110fbd3/origin-lord-london.png"
+:authorName: Duncan Forbes
+:title: Testing this cheesy blog
+:subtitle: Something Dam Awesome
+:addBlogMedia:
+- :title: Pear Lord London 1
+  :url: "//images.contentful.com/meg1xu0a1no8/6sRW79RTlSyM2WyM8Q4cWI/5fe3ab774344cfdcbd1337d8a85f62f6/IMG_7249.jpg"
+:body: |-
+  A cheesy world full of cheesy people and pongie smells was never for the faint hearted. So those in cheeseland were not like everyone back on earth. They had adapted to live around the strong smells of gooey cheeses that oozed out of the side of the facade of houses. The facades of each house were made of rind. helo
+
+
+   ![Pear Lord London 1](//images.contentful.com/meg1xu0a1no8/6sRW79RTlSyM2WyM8Q4cWI/5fe3ab774344cfdcbd1337d8a85f62f6/IMG_7249.jpg)
+
+  Living in a cheese house was not easy. You spent most of your time having to walk slowly with your feet getting stuck into the thick gooey floor. Though the cheaper houses where ironically easier to live in. Due to being made of cheddar or hard ewes milk cheese. Though those more fortunate wanted to be seen in feature laden houses of a soft goats cheese...
+:tags:
+- milk
+- cheese
+- dairy
+:blogCategory:
+- insights
+:author:
+  :id: xwmtbVfGSccEMGO8ya6ie
+  :name: Duncan
+  :profilePhoto:
+    :title: Duncan Forbes
+    :url: "//images.contentful.com/meg1xu0a1no8/58GYLy3SX6ASWKiWku6UeY/4d27ac3ca305a46b3dacf7969e73fa00/Y7t8r-b5.jpg"
+  :biography: Duncan a co-founder of cheeemix
+:comments: true
+:date: !ruby/object:DateTime 2017-06-13 09:30:00.000000000 Z

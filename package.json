@@ -1,0 +1,18 @@
+{
+  "name": "Cheesemix_Blog",
+  "version": "0.0.1",
+  "description": "Cheesemix Blog Publication",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DuncanAForbes/cheesemix-blog.git"
+  },
+  "engines": {
+    "npm": ">=3"
+  },
+  "author": "Duncan Forbes",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-sass": "3.1.0"
+  }
+}

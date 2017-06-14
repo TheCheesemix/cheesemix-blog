@@ -1,0 +1,103 @@
+
+
+.btn-mix {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 0 1rem;
+    padding: .85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color .25s ease-out,color .25s ease-out;
+    &.main {
+        background-color: #282538;
+        width: 100%;
+    }
+    &.white {
+        background-color: #ffffff;
+        color: #0f0d17;
+        width: 95%;
+    }
+    &.home {
+        background-color: #282538;
+        width: 95%;
+    }
+    &:hover {
+        background-color: #5960aa;
+        color: #ffffff;
+    }
+}
+
+
+.btn {
+    &.signup {
+        color: #ffc400;
+        border: 2px solid #ffc400;
+        padding: 10px 8px;
+        border-radius: 4px;
+        -webkit-appearance: none;
+        transition: background-color .25s ease-out,color .25s ease-out;
+
+    }
+    &.signup:hover {
+        background: #282538;
+        border: 2px solid #282538;
+        color: #ffffff;
+    }
+    &.shop {
+        background: #282538;
+        padding: 10px 45px;
+        color: #fff;
+    }
+}
+
+
+.btn-mix-newsletter {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem;
+    padding: .85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: background-color .25s ease-out,color .25s ease-out;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    background-color: #2B2A33;
+    color: #fefefe !important;
+}
+
+.btn-container {
+    width: 100%;
+    min-width: 250px;
+    max-width: 350px;
+    &.order-it {
+    margin: 0 auto;
+    }
+    &.read-faqs {
+        margin: 20px auto;
+    }
+}
+
+
+
+.juicer-feed .j-paginate {
+    border: 2px solid #282538 !important;
+    color: #fff !important;
+    background-color: #282538 !important;
+    &::hover{
+        background-color: #5960aa !important;
+    }
+}
+
+
