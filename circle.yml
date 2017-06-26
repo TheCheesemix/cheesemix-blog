@@ -8,4 +8,3 @@ checkout:
   post:
     - bundle install
     - bash automated_build.sh
-	- bundle exec middleman s3_sync

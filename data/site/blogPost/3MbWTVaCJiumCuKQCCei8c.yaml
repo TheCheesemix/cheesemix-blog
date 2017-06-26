@@ -1,14 +1,12 @@
 ---
-:id: 3axCjNPvgk8246GOeiKCQa
-:slug: tasting-this-cheeseblog
+:id: 3MbWTVaCJiumCuKQCCei8c
+:slug: tasting-this-cheesy-blog-three
 :featuredImage:
   :title: Heading Template
   :url: "//images.contentful.com/meg1xu0a1no8/2VexQYZkPmQagYcw8yS0Qw/7e51b0ebf92bd725cb1b16482ba3e761/Heading_Template.jpg"
-:authorName: There was a dark dark night in the land of cheeseland and everyone was
-  petrified
-:title: Testing this cheesy blog is super duper
-:subtitle: There was a dark dark night in the land of cheeseland and everyone was
-  petrified
+:authorName: Duncan Forbes
+:title: Testing this cheesy blog 3
+:subtitle: Something Dam Awesome
 :addBlogMedia:
 - :title: Pear Lord London 1
   :url: "//images.contentful.com/meg1xu0a1no8/6sRW79RTlSyM2WyM8Q4cWI/5fe3ab774344cfdcbd1337d8a85f62f6/IMG_7249.jpg"
@@ -24,7 +22,7 @@
 - cheese
 - dairy
 :blogCategory:
-- recipes
+- updates
 :author:
   :id: xwmtbVfGSccEMGO8ya6ie
   :name: Duncan Forbes
@@ -34,4 +32,4 @@
   :biography: Duncan a co-founder of cheeemix
   :twitterProfile: https://twitter.com/duncanaforbes
 :comments: true
-:date: !ruby/object:DateTime 2017-06-14 00:00:00.000000000 Z
+:date: !ruby/object:DateTime 2017-06-22 00:00:00.000000000 Z

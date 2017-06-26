@@ -1,5 +1,53 @@
+%header.hiddennav
+  %nav.main-nav.mini
+
+    %ul.left.mini
+      %li.has-dropdown.gallery{ :data => { :content => "resources" }}
+        %a{ :href => "#0" }
+          More about Cheesemix
+
 
 %header.mix-dropdown
+  .middle.logo-center.mobile
+    %span
+      %img= link_to image_tag( 'cheesemix-fresh-blog-logo.png'), 'http://blog.cheesemix.com'
+
+    %nav.mobile-nav mobile
 
 
- 
+  %nav.main-nav
+    %img= link_to image_tag( 'cheesemix-fresh-blog-logo.png'), 'http://blog.cheesemix.com'
+
+    %ul.right
+      %li.has-dropdown.gallery
+        %a{ :href => "/catagories/recipes/" }
+          Recipes
+      %li.has-dropdown.gallery
+        %a{ :href => "/catagories/insights/" }
+          Insights
+      %li.has-dropdown.gallery
+        %a{ :href => "/catagories/marketing/" }
+          Marketing
+      %li.has-dropdown.gallery
+        %a{ :href => "/catagories/design/" }
+          Design
+      %li.has-dropdown.gallery
+        %a{ :href => "/catagories/customer-support/" }
+          Customer Support
+      %li.has-dropdown.gallery
+        %a{ :href => "/catagories/product-management/" }
+          Product Management
+      %li.has-dropdown.gallery
+        %a{ :href => "/catagories/updates/" }
+          Updates
+      %li
+        %a
+          %i.fa.fa-search{ :aria => { :hidden => "true" }}
+
+
+  .mix-dropdown-wrapper
+    .dropdown-list
+      %ul
+        #how-it-works
+          %a{ :href => "{{ site_url('how-it-works') }}", :class => "label"}
+            How It Works

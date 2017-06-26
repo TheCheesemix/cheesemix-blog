@@ -1,0 +1,30 @@
+- article_data = article
+
+%article.grid-hero-single-column.feed{itemscope: '', itemtype: 'http://schema.org/Article', :data => { :file => "/#{article_data[:slug]}/", :target => "article" }}
+	.featureInner
+		.featureImage.hero
+			= link_to "/#{article_data[:slug]}/" do
+				- if article_data[:featuredImage].present?
+					= image_tag "#{article_data[:featuredImage][:url]}", class: 'feature-image', itemprop: 'image'
+		.feature-container
+			= link_to "/#{article_data[:slug]}/" do
+				.featureContent
+					.titleContainer.hero
+						%p
+							%small
+								%span
+									%span.eta
+								read time
+
+						%h1{itemprop: 'headline'}
+							= article_data[:title]
+						%p{itemprop: 'description'}
+							= truncate(article_data.body, length: 144)
+
+						.authorImageMicro{itemscope: '', itemtype: 'http://schema.org/Person', itemprop: 'author'}
+						
+							= image_tag "#{article_data[:author][:profilePhoto][:url]}", class: 'author-image', itemprop: 'image'
+						
+						.authorNameMicro{itemscope: '', itemtype: 'http://schema.org/Person', itemprop: 'author'}
+							%p{itemprop: 'name'}
+								= article_data[:author][:name]

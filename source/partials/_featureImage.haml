@@ -1,0 +1,4 @@
+- article_data = article[1]
+
+- if article_data[:featuredImage].present?
+	= image_tag "#{article_data[:featuredImage][:url]}", class: 'feature-image'

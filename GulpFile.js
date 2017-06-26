@@ -27,3 +27,18 @@ gulp.task('scripts', function() {
         .pipe(uglify())
         .pipe(gulp.dest(jsDest));
 });
+
+
+gulp.task('deploy', function() {
+  var spawn = require('child_process').spawn;   
+  var jekyll = spawn('bunlde', 'exec', 'middleman', ['build'], {stdio: 'inherit'});
+
+  jekyll.on('exit', function(code) { 
+    if(code === 0) {
+      require('child_process').spawn('gsutil',  ['-m', 'rsync', '-r', '-d',
+'./build', 'gs://blog.cheesemix.com'], {stdio: 'inherit'});
+    } else {
+       process.stdout.write("Build failed. Exit code: " + code);
+    }
+  });
+});

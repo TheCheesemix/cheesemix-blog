@@ -16,3 +16,17 @@
 .drip-lightbox .drip-content h3 {
     text-align: center !important;
 }
+
+
+.gitter-chat-embed {
+    z-index: 9999 !important;
+    right: initial !important;
+    width: 100% !important;
+    left: 0 !important;
+}
+
+.gitter-open-chat-button {
+    bottom: 0;
+    right: initial !important;
+    left: 10px;
+}

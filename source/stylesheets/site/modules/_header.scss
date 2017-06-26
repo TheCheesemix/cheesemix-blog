@@ -18,6 +18,17 @@ $header-container: (
 .left {
   @include grid-column(5, $header-container);
   float: left !important;
+  &.mini {
+    padding: 0px;
+    margin-top: 3px;
+    margin-left: 1.5em;
+    margin-bottom: 0;
+    left: 0;
+    text-align: left;
+     a {
+        color: #fff;
+    }
+  }
 }
 
 .middle {
@@ -43,8 +54,12 @@ $header-container: (
       text-align: center;
       margin: 0 auto;
       float: none;
-      padding: 15px;
+      padding: 0px 10px;
       width: 100%;
+      img {
+          height: 50px;
+          float: left;
+      }
    }
   } 
 }
@@ -70,15 +85,30 @@ $header-container: (
 }
 
 
-
 .right {
   li {
     float: none !important;
   }
-  @include grid-column(5, $header-container);
+  @include grid-column(9, $header-container);
   float: right;
   text-align: right;
+  margin-right: 2em;
 }
+
+
+.hiddennav {
+    position: relative;
+    height: 30px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    padding: 0;
+    text-align: center;
+    background-color: #292538;
+    border: 1px solid #f2f2f2;
+}
+
 
 .header {
     background: #fff;
@@ -253,6 +283,16 @@ $header-container: (
 .mix-dropdown .main-nav {
   display: none;
 }
+.mix-dropdown {
+  .main-nav {
+      img {
+          height: 60px;
+          float: left;
+          margin-left: 10px;
+          margin-top: 7px;
+      }
+    }
+}
 .mix-dropdown .mix-dropdown-wrapper {
   display: none;
   position: absolute;
@@ -360,8 +400,8 @@ $header-container: (
 }
 @media only screen and (min-width: 1000px) {
   .mix-dropdown {
-    position: absolute;
-    height: 54px;
+    position: relative;
+    height: 80px;
     left: 0;
     top: 0;
     width: 100%;
@@ -392,9 +432,9 @@ $header-container: (
   }
   .mix-dropdown .main-nav > ul > li > a {
     display: block;
-    padding: 0 1em;
+    padding: 0 0.6em;
     height: 22px;
-    line-height: 20px;
+    line-height: 45px;
     font-size: 1.1rem;
     font-weight: bold;
     color: #282538;

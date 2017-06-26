@@ -1,0 +1,52 @@
+!!!
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if IE 8]> <html lang="en"> <![endif]--> 
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]--> 
+%html
+  %head
+    %title
+
+    /[if lt IE 8] <html class="no-js ie7 oldie" lang="en">
+    /[if IE 8] <html class="no-js ie8 oldie" lang="en">
+    /[if IE 9] <html class="no-js ie9 oldie" lang="en">
+    <!--[if gt IE 9]><!-->
+    %html{:class => 'no-js', :lang => 'en'}<>
+    %script{ :src => "http://html5shim.googlecode.com/svn/trunk/html5.js" }
+    <!--<![endif]-->
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    %title= title
+
+    
+    %meta{ :http => { :equiv => "Content-Type", :content => "text/html", :charset => "UTF-8"}}
+    %meta{ :http => { :equiv => "Accept-CH", :content => "DPR, Width, Viewport-Width"}}
+    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %meta{ :name => "Description", :content => ""}
+    %meta{ :name => "Keywords", :content => ""}
+
+    %meta{ :property => "og:url", :content => "http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" }
+    %meta{ :property => "og:type", :content => "article"}
+    %meta{ :property => "og:title", :content => current_page.data }
+    %meta{ :property => "og:description", :content => current_page.data }
+    %meta{ :property => "og:image", :content => "//static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" }
+
+
+    = stylesheet_link_tag "main"
+
+    %script{ :type => 'text/javascript', :src => '//platform-api.sharethis.com/js/sharethis.js#property=5947a91ace91310011812279&product=inline-share-buttons', :async => 'async'}
+
+    %link{ :rel => "stylesheet", :type => "text/css", :href => "//cdn.jsdelivr.net/npm/instantsearch.js@1/dist/instantsearch.min.css"}
+
+    %body
+
+      = partial  "header"
+ 
+
+      = yield
+
+      = partial  "footer"
+
+      = javascript_include_tag  "site"
+      = partial  "foot"
+
+ 

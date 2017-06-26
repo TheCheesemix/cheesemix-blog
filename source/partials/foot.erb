@@ -1,33 +1,161 @@
-<!-- Drip -->
+  
+  <script src="//code.jquery.com/jquery-2.1.4.js"></script>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+
+  <!-- Drip -->
+  <script type="text/javascript">
+    var _dcq = _dcq || [];
+    var _dcs = _dcs || {};
+
+    _dcs.account = '6291810'; 
+
+    
+    (function() {
+      var dc = document.createElement('script');
+      dc.type = 'text/javascript'; dc.async = true; 
+      dc.src = '//tag.getdrip.com/6291810.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(dc, s);
+    })();
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@1/dist/instantsearch.min.js"></script>
+  <script>
+    var search = instantsearch({
+      appId: '4S0OR5Z8X9',
+      apiKey: '11c76cd88fa221a5e0733e6e3b476baey',
+      indexName: 'cheesemix_blog',
+      urlSync: true
+    });
+
+    var onRenderHandler = function() {};
+    search.on('render', onRenderHandler);
+    // on renderHandler will be called
+    // until removeListener is called
+    search.removeListener(onRenderHandler);
+
+    search.once('render', function(){  });
+    // triggered once then removed automatically
+
+    search.addWidget(
+      instantsearch.widgets.searchBox({
+        container: '#search-box',
+        placeholder: 'Search for products...'
+      })
+    );
+
+    search.addWidget(
+      instantsearch.widgets.hits({
+        container: '#hits-container',
+        templates: {
+          item: 'Hit {{objectID}}: FIXME'
+        }
+      })
+    );
+
+    search.addWidget(
+      instantsearch.widgets.pagination({
+        container: '#pagination-container'
+      })
+    );
+
+    search.start();
+  </script>
+
+
+
+<script src="/javascripts/readingTime.js"></script>
+
 <script type="text/javascript">
-  var _dcq = _dcq || [];
-  var _dcs = _dcs || {};
+$('article').readingTime();
 
-  _dcs.account = '6291810'; 
-  
-  _dcq.push(["identify", {
-    email: "{{ customer.email }}",
-    first_name: "{{ customer.first_name }}",
-    lst_name: "{{ customer.last_name }}",
-    tags: ["{{ customer.customerGroups }}"]
-  }]);
+$('article').each(function() {
 
-  _dcq.push(["showForm", { id: "37771134" }]);
-  _dcq.push(["hideForm", { id: "37771134" }]);
+  $(this).readingTime({
+    readingTimeTarget: $(this).find('.eta'),
+    wordCountTarget: $(this).find('.words'),
+    remotePath: $(this).attr('data-file'),
+    remoteTarget: $(this).attr('data-target')
+  });
   
-  (function() {
-    var dc = document.createElement('script');
-    dc.type = 'text/javascript'; dc.async = true; 
-    dc.src = '//tag.getdrip.com/6291810.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(dc, s);
-  })();
+});
+
 </script>
 
- 
+
+
+<script type="text/javascript">
+   function toggle_visibility(comments) {
+       var e = document.getElementById(comments);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+   }
+</script>
 
 
 
+<script type="text/javascript">
+$(function() {
+  $('#newsletterForm').submit(function(event) {
+    event.preventDefault();
+
+    var subscribeForm = $(this);
+    var subscribeButton = $('input[type=submit]', subscribeForm);
+
+    if ($("input[name='fields[first_name]']").val() === '') {
+      var alert = document.getElementById('error');
+
+      alert.innerHTML = alert.innerHTML + '<p>You need to add your First name</p>';
+      return
+    }
+
+    if ($("input[name='fields[email]']").val() === '') {
+      var alert = document.getElementById('error');
+
+      alert.innerHTML = alert.innerHTML + '<p>You need to add your email</p>';
+      return
+    }
+
+    $.ajax({
+      url: subscribeForm.prop('action'),
+      type: 'POST',
+      crossDomain: true,
+      headers : {
+        'accept' : 'application/javascript',
+      },
+      data: $('#newsletterForm').serialize(),
+      beforeSend: function() {
+        subscribeButton.prop('disabled', 'disabled');
+      }
+    })
+    .done(function(response) {
+      $('#newsletterForm').remove();
+
+      var success = document.getElementById('form-result');
+
+      success.innerHTML = success.innerHTML + '<div class="circle"><h1>Thank you</h1></div><h3>You are amazing!</h3><p>We have now sent you an email for you to confirm your email address ;-)</p>';
+
+      subscribeButton.prop('disabled', false);
+    })
+    .fail(function(response) {
+
+      var fail = document.getElementById('form-result');
+
+      fail.innerHTML = fail.innerHTML + '<h1>Something Went Wrong :-(</h1><h3>Try again!</h3>';
+
+      subscribeButton.prop('disabled', false);
+      subscribeButton.prop('disabled', false);
+    })
+
+  });
+});
+</script>
 
 <!-- Start of Async Fullstory Code -->
 <script>
@@ -58,14 +186,6 @@ FS.identify('{{ customer.id }}', {
 
 
 
-<script>(function(n,t,i,r){var u,f;n[i]=n[i]||{},n[i].initial={accountCode:"CAPPU11112",host:"CAPPU11112.pcapredict.com"},n[i].on=n[i].on||function(){(n[i].onq=n[i].onq||[]).push(arguments)},u=t.createElement("script"),u.async=!0,u.src=r,f=t.getElementsByTagName("script")[0],f.parentNode.insertBefore(u,f)})(window,document,"pca","//CAPPU11112.pcapredict.com/js/sensor.js")</script>
-
-
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59371247acdb9f85"></script>
-
- 
-
 <script>
   !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
   analytics.load("hHHDTvid4iFl7Mr0sYNkwpJRP9c7ruCm");
@@ -81,7 +201,7 @@ var webengage; !function(w,e,b,n,g){function o(e,t){e[t[t.length-1]]=function(){
 webengage.init("11b565317");
 </script>
 
-
+ 
 <script type="text/javascript">
   !function(name,path,ctx){
     var latest,prev=name!=='Keen'&&window.Keen?window.Keen:false;ctx[name]=ctx[name]||{ready:function(fn){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onerror=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;latest=w.Keen;if(prev){w.Keen=prev}else{try{delete w.Keen}catch(e){w.Keen=void 0}}ctx[name]=latest;ctx[name].ready(fn)};s.async=1;s.src=path;h.parentNode.insertBefore(s,h)}}
@@ -118,3 +238,4 @@ _wq.push({"_all": function(video){
 }});
 </script>
 
+<script id="dsq-count-scr" src="//cheesemix.disqus.com/count.js" async></script>

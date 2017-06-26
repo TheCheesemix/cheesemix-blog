@@ -11,6 +11,12 @@ gem 'sass', '~> 3.4.23'
 
 gem "middleman", "~>3.3.12"
 
+gem 'middleman-sync', '~> 3.0.12'
+
+gem "middleman-blog"
+
+gem 'mime-types', '~> 3.0.0'
+
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
 
@@ -23,3 +29,10 @@ gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 gem "contentful_middleman"
 gem 'middleman-autoprefixer'
 gem 'redcarpet'
+
+gem 'middleman-disqus'
+
+gem 'algoliasearch'
+
+gem 'html-hierarchy-extractor', '~> 1.0'
+

@@ -1,0 +1,17 @@
+<%
+pages = sitemap.resources.find_all { |p| p.source_file.match(/\.md/) }
+entries = []
+
+pages.each_with_index do |page, index|
+  object = {}
+    # ... some specifics ommitted
+    entry = {
+      :id    => index,
+      :title => page.data.title,
+      :url   => page.url,
+      :content => page.render({:layout => false }).gsub(
+        %r{</?[^>]+?>}, '' )
+    }
+  entries << entry
+end
+%><%= entries.to_json %>

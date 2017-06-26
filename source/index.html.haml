@@ -1,12 +1,16 @@
----
-title: Contentful Middleman Blog
----
 
 
+%article.postFeedContainer.hero
+	.grid--twos
+		- all_articles[0...1].each do |article|
+			= partial "hero", locals: { article: article }
 
+%article.postFeedContainer#article
+	.grid--twos
+		- all_articles[1...2].each do |article|
+			= partial "featured", locals: { article: article }
 
-
-.container.stream
-  .postContent
-    - data.site.blogPost.each do |post|
-      = partial "post", locals: { post: post }
+%article.postFeedContainer#article
+	.grid--twos		
+		- all_articles[2...8].each do |article|
+			= partial "article", locals: { article: article }
