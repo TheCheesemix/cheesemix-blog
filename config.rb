@@ -1,6 +1,12 @@
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
+
+
+# ------------------------------------------------------------------------------
+# Middleman Configuration
+# ------------------------------------------------------------------------------
+
 # For custom domains on github pages
 page "CNAME", layout: false
 
@@ -12,7 +18,6 @@ set :markdown_engine, :redcarpet
 
 
 Time.zone = "London"
-
 
 
 activate :autoprefixer do |prefix|
@@ -32,6 +37,11 @@ activate :relative_assets
 activate :asset_hash
 
 
+
+activate :disqus do |d|
+  d.shortname = 'cheesemix' # Replace with your Disqus shortname.
+end
+
 # Layouts
 # https://middlemanapp.com/basics/layouts/
 
@@ -40,10 +50,65 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+page "/layouts/feed.html", :layout => "feed"
 
+page "../layouts/post.html", :layout => "post"
+
+
+data.site.blogPost.each do |article|
+  page "/#{article[1][:slug]}.html", proxy: '/post/show.html', ignore: true do
+    @article     = article[1]
+    @title    = article[1][:title]
+    @subtitle    = article[1][:subtitle]
+    @slug     = article[1][:slug]
+    @body     = article[1][:body]
+    @image    = article[1][:featuredImage]
+    @imageUrl     = article[1][:featuredImage][:url]
+    @imageTitle    = article[1][:featuredImage][:title]
+    @date     = article[1][:date]
+    @tags     = article[1][:tags]
+    @category    = article[1][:blogCategory]
+    @authorName   = article[1][:author][:name]
+    @authorPhoto   = article[1][:author][:profilePhoto][:url]
+    @authorPhotoTitle   = article[1][:author][:profilePhoto][:title]
+    @authorBiography   = article[1][:author][:biography]
+    @comments = article[1][:comments]
+  end
+end
+
+activate :blog do |blog|
+  blog.taglink = "categories/{data.site.blogPost.tags}.html"
+end
+
+# Disable warnings
+Haml::TempleEngine.disable_option_validator!
+
+
+activate :drafts
+
+
+# This will push to the gh-pages branch of the repo, which will
+# host it on github pages (If this is a github repository)
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.build_before = true
+end
+
+
+configure :build do
+  # activate :minify_css
+  # activate :minify_javascript
+  # activate :asset_hash
+  # activate :relative_assets
+end
+
+
+# ------------------------------------------------------------------------------
+# Contentful Configuration
+# ------------------------------------------------------------------------------
 
 activate :contentful do |f|
-  f.access_token  = "dc4bbaef77a67ae520045ad0942a81663a1bddcc7dc6dabcf84b53d4e8c3a558"
+  f.access_token  = "dc4bbaef77a67..."
   f.space = {site:"meg1xu0a1no8"}
   f.content_types = {blogPost: "blogPost"}
 
@@ -54,25 +119,6 @@ activate :contentful do |f|
 
 end
 
-
-
-
-data.site.blogPost.each do |post|
-  page "/blog/#{post[1][:slug]}.html", proxy: '/blog/show.html', ignore: true do
-    @post     = post[1]
-    @title    = post[1][:title]
-    @slug     = post[1][:slug]
-    @body     = post[1][:body]
-    @image    = post[1][:featuredImage]
-    @date     = post[1][:date]
-    @tags     = post[1][:tags]
-    @author   = post[1][:author]
-    @comments = post[1][:comments]
-  end
-end
-
-# Disable warnings
-Haml::TempleEngine.disable_option_validator!
 
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
@@ -97,23 +143,7 @@ Haml::TempleEngine.disable_option_validator!
   # blog.page_link = "page/{num}"
  
 
-activate :drafts
 
-
-# This will push to the gh-pages branch of the repo, which will
-# host it on github pages (If this is a github repository)
-activate :deploy do |deploy|
-  deploy.method = :git
-  deploy.build_before = true
-end
-
-
-configure :build do
-  # activate :minify_css
-  # activate :minify_javascript
-  # activate :asset_hash
-  # activate :relative_assets
-end
 
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
@@ -146,3 +176,62 @@ end
 #   activate :minify_css
 #   activate :minify_javascript
 # end
+
+
+
+
+
+# ------------------------------------------------------------------------------
+# Helpers
+# ------------------------------------------------------------------------------
+
+helpers do
+  def title
+  end
+
+  def author
+    data.site.blogPost.first[1].author[0]
+  end
+
+  def sort_by_most_recent(posts)
+    posts.sort_by { |key| key["date"] }.reverse
+  end
+
+  def recent_articles
+    articles = []
+    data.site.blogPost.first(3).each do |id, article|
+      articles.push article
+    end
+    sort_by_most_recent(articles)
+  end
+
+  def category
+    data.site.blogPost.first[1].blogCategory[0]
+  end
+
+  def tags
+
+  end
+
+  def all_articles
+    articles = []
+    data.site.blogPost.each do |id, article|
+      articles.push article
+    end
+    sort_by_most_recent(articles)
+  end
+
+  def publish_date(datetime)
+    datetime.strftime('%B %d, %Y')
+  end
+
+  def microdata_date(datetime)
+    datetime.strftime('%Y-%m-%d')
+  end
+
+end
+
+ 
+
+
+
