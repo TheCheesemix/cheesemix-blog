@@ -1,6 +1,10 @@
 machine:
   ruby:
     version: 2.3.1
+deployment:
+  production:
+    pre:
+      - pyenv global 2.7.12
 dependencies:
   pre:
     - gem install bundler
