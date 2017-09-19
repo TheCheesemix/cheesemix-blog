@@ -1,0 +1,30 @@
+- category_data = category
+
+%article.grid-two-single-column.feed{itemscope: '', itemtype: 'http://schema.org/Article', :data => { :file => "/#{category_data[:slug]}/", :target => "article" }}
+	.featureInner
+		.featureImage
+			= link_to "/#{category_data[:slug]}/" do
+				- if category_data[:featuredImage].present?
+					= image_tag "#{category_data[:featuredImage][:url]}", class: 'feature-image', itemprop: 'image'
+		.feature-container
+			= link_to "/#{category_data[:slug]}/" do
+				.featureContent
+					.titleContainer
+						%p
+							%small
+								%span
+									%span.eta
+								read time
+
+						%h1{itemprop: 'headline'}
+							= category_data[:title]
+						%p{itemprop: 'description'}
+							= truncate(category_data.body, length: 120)
+
+						.authorImageMicro{itemscope: '', itemtype: 'http://schema.org/Person', itemprop: 'author'}
+						
+							= image_tag "#{category_data[:author][:profilePhoto][:url]}", class: 'author-image', itemprop: 'image'
+						
+						.authorNameMicro{itemscope: '', itemtype: 'http://schema.org/Person', itemprop: 'author'}
+							%p{itemprop: 'name'}
+								= category_data[:author][:name]

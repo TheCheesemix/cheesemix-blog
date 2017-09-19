@@ -20,14 +20,18 @@ $header-container: (
   float: left !important;
   &.mini {
     padding: 0px;
-    margin-top: 3px;
+    margin-top: 4px;
     margin-left: 1.5em;
     margin-bottom: 0;
     left: 0;
     text-align: left;
+      ul li {
+        margin-top: 0px;
+      }
      a {
         color: #fff;
-    }
+        font-weight: bold;
+      }
   }
 }
 
@@ -107,6 +111,9 @@ $header-container: (
     text-align: center;
     background-color: #292538;
     border: 1px solid #f2f2f2;
+     @include grid-media($medium-grid){
+      display: none;
+    }
 }
 
 
@@ -119,6 +126,9 @@ $header-container: (
     border: 1px solid #f2f2f2;
     box-shadow: 0 1px 0 0 rgba(0,0,0,0.066);    
     width: 100%;
+    @include grid-media($medium-grid){
+      display: none;
+    }
 }
 
 
@@ -133,7 +143,12 @@ $header-container: (
 }
 
 
-
+.scroll-line{
+  height: 2px;
+  margin-bottom: -2px;
+  background: #fec430;
+  width: 0%;
+}
 
 
 
@@ -294,14 +309,13 @@ $header-container: (
     }
 }
 .mix-dropdown .mix-dropdown-wrapper {
-  display: none;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  padding: 1.2em 5%;
-  box-shadow: inset 0 1px 0 #e6e6e6;
-  background-color: #FFFFFF;
+    display: none;
+    position: absolute;
+    top: 53px;
+    left: 0;
+    width: 100%;
+    padding: 1.2em 5%;
+    background-color: #16141d;
 }
 .mix-dropdown.nav-open .mix-dropdown-wrapper {
   display: block;
@@ -314,9 +328,11 @@ $header-container: (
 }
 .mix-dropdown .label {
   display: block;
-  font-size: 2rem;
-  color: #1A1A1A;
+  font-size: 1.3rem;
+  color: #fec430;
   margin-bottom: .5em;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fec430;
 }
 .mix-dropdown .content li::after {
   clear: both;
@@ -326,27 +342,16 @@ $header-container: (
 .mix-dropdown .content ul > li {
   margin-left: 0;
   margin-right: 0;
-      width: auto;
+      width: 100%;
 }
 .mix-dropdown .gallery .content li {
   margin-bottom: 1.4em;
 }
 .mix-dropdown .gallery .content a {
+  color: #ffffff;
   display: block;
 }
-.mix-dropdown .gallery .content a::before {
-  /* icon on the left */
-  content: '';
-  display: inline-block;
-  float: left;
-  height: 54px;
-  width: 54px;
-  margin-right: .6em;
-  background: red;
-  border-radius: 50%;
-  -webkit-transition: background .2s;
-  transition: background .2s;
-}
+
 .mix-dropdown .gallery .content a span, .mix-dropdown .gallery .content a em {
   display: block;
   line-height: 1.2;
@@ -436,7 +441,7 @@ $header-container: (
     height: 22px;
     line-height: 45px;
     font-size: 1.1rem;
-    font-weight: bold;
+    font-weight: 500;
     color: #282538;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -664,4 +669,9 @@ $header-container: (
 
 
 
+.mobileNavOpen {
+  .postFeedContainer, #article {
+    opacity: .2;
+  }
 
+}

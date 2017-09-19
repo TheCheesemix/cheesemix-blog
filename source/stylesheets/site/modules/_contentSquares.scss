@@ -45,29 +45,28 @@ $grid--twos: (
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
     position: relative;
-    &.feed {
-        padding: 0px 45px 10px;
-        border-radius: 10px 10px 0 0;
-    }
+    padding: 0px 45px 10px;
+    border-radius: 10px 10px 0 0;
     @include grid-media($medium-large-grid) {
+        padding: 0px 0px 10px;
     }
     @include grid-media($medium-grid) {
         @include grid-collapse;
     }
     @include grid-media($small-grid){
     @include grid-collapse;
-        padding: 50px 20px 0px;
+        padding: 0px 20px 0px;
     }
 }
 
 
 .grid-one-single-column {
-    @include grid-column(8, $grid--twos);
+    @include grid-column(6, $grid--twos);
     height: auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
     position: relative;
-    padding: 90px 45px 10px;
+    padding: 45px 30px 10px;
     border-radius: 10px 10px 0 0;
     &.newsletter {
         @include grid-column(4, $grid--twos);    
@@ -85,7 +84,7 @@ $grid--twos: (
     }
     @include grid-media($small-grid){
     @include grid-collapse;
-        padding: 50px 20px 0px;
+        padding: 35px 20px 0px;
     }
 }
 
@@ -96,8 +95,9 @@ $grid--twos: (
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
     position: relative;
+    width: 500px;
     &.feed {
-        padding: 90px 45px 10px;
+        padding: 45px 10px 10px;
         border-radius: 10px 10px 0 0;
     }
     @include grid-media($medium-large-grid) {
@@ -109,14 +109,12 @@ $grid--twos: (
     @include grid-media($small-grid){
     @include grid-collapse;
         &.feed {
-            padding: 50px 20px 0px;
+            padding: 25px 20px 0px;
         }
     }
 }
 
 .featureInner {
-    background: #fff;
-    border-bottom: 2px solid #f2f2f2;
     .featureImage {
         max-width: 1440px;
         margin: 0 auto;
@@ -127,7 +125,8 @@ $grid--twos: (
                 max-width: 1800px;    
             }
             img {
-                width: 100%
+                width: 100%;
+                border-radius: 10px;
         }
     }
     .feature-container {
@@ -136,6 +135,8 @@ $grid--twos: (
         padding-left: 15px;
         padding-right: 15px;
         width: 100%;
+        white-space: normal;
+        
         &:before, &:hover:after {
         -webkit-transform: scaleX(1);
         transform: scaleX(1);
@@ -148,7 +149,7 @@ $grid--twos: (
         &:after, &:before {
             content: " ";
             position: relative;
-            bottom: -8px;
+            bottom: 1px;
             left: 0;
             width: 100%;
             display: block;
@@ -164,9 +165,11 @@ $grid--twos: (
         }
         .featureContent {
             background: #fff;
+            border-bottom: 3px solid #f2f2f2;
             position: relative;
             z-index: 2;
             margin-top: -10%;
+            border-radius: 0 0 10px 10px;
             padding: 10px 20px 20px;
             display: -webkit-box;
             display: -ms-flexbox;
@@ -188,17 +191,22 @@ $grid--twos: (
                         border-radius: 50%;
                     }
                 }
+                small {
+                    text-transform: uppercase;
+                    color: #16141d;
+                }
                 .authorNameMicro {
                     @include grid-column(10, $grid--twos);
                     margin: 20px 0px 0px 0px;
                     text-align: left;
-                    padding-top: 12px;
+                    padding-top: 14px;
                     padding-left: 12px;
                     width: 200px;
                     p {
                         font-size: 1rem;
-                        color: #5960aa;
+                        color: #16141d;
                         font-weight: bold;
+                        text-transform: uppercase;
                     }
                 }
                 &.hero {
@@ -220,15 +228,19 @@ $grid--twos: (
                     color: #000;
                     color: #464646;
                     font-size: 1.3em;
+                    line-height: 1.5rem;
                 }
                 @include grid-media($medium-large-grid){
                      &.hero {
                         h1 {
-                            font-size: 2rem;
+                            font-size: 1.8rem;
                         } 
                     }   
                     h1 {
-                        font-size: 2rem;
+                        font-size: 1.8rem;
+                    }
+                    p {
+                        font-size: 1.1rem;
                     }
                  }
                 @include grid-media($small-grid){

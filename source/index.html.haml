@@ -7,10 +7,11 @@
 
 %article.postFeedContainer#article
 	.grid--twos
-		- all_articles[1...2].each do |article|
+		- all_articles[1...3].each do |article|
 			= partial "featured", locals: { article: article }
 
 %article.postFeedContainer#article
-	.grid--twos		
-		- all_articles[2...8].each do |article|
-			= partial "article", locals: { article: article }
+	.grid--twos
+		.article-gallery		
+			- all_articles[1...8].each do |article|
+				= partial "article", locals: { article: article }

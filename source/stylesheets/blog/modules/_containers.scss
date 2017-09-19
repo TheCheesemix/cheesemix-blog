@@ -23,10 +23,12 @@
 }
 
 .heroTitle {
-    padding: 0.5em 0;
+    padding: 1.5em 2em 0;
     text-align: center;
     p {
     	text-transform: uppercase;
+ 		line-height: 0;
+    	font-size: 0.8rem;
     }
 	h1 {
 		font-family: 'Spectral', Helvetica, Arial, sans-serif;
@@ -36,7 +38,7 @@
 	}
     @include grid-media($medium-large-grid){
  		h1 {
- 			font-size: 2rem;
+    		font-size: 1.4rem;
 		}
      }
     @include grid-media($small-grid){
@@ -49,8 +51,8 @@
 	&.main {
 	    margin-left: auto;
 	    margin-right: auto;
-	    padding-left: 45px;
-	    padding-right: 45px;
+	    padding-left: 0px;
+	    padding-right: 0px;
 	    max-width: 1270px;
     }
     width: 90%;
@@ -67,7 +69,7 @@
 	.author-image {
     	text-align: center;
     	img {
-		    width: 120px !important;
+		    width: 68px !important;
 		    border-radius: 50%;
 		    text-align: center;
     	}
@@ -76,15 +78,15 @@
 	    background: #f9f9f9;
 	    position: relative;
 	    z-index: 10;
-    	&.heading {
-    		margin-top: -30%;
-	    	text-align: center;
-    		padding: 2em 5em;
+	    margin-top: -25%;
+    	.heading {
+		    text-align: center;
+		    padding: 2.5em 5em 2em;
     		p {
     		   line-height: 1.3rem;
     		}
     	}
-    	&.main {
+    	.main {
     		padding: 0 5em;
     	}
 		img {
@@ -94,34 +96,37 @@
 		  	line-height: 2rem;
 		}
 		h2 {
-		   	font-size: 2.2em;
+			font-family: 'Spectral', Helvetica, Arial, sans-serif;
+		   	font-size: 2.1em;
 		}
 	}
     @include grid-media($medium-large-grid){
-	    &.main { 
+	    .main { 
 	    	padding-left: 0px;
 	    	padding-right: 0px;
 	    }
 	  	.postContent {
-		 	&.heading {
-		   	 margin-top: -35%;
-		   	 padding: 2em 3em;
+	  	    margin-top: -30%;
+		 	.heading {
+    			padding: 2em 0.5em 2em;
 			} 
-			&.main {
+			.main {
 				padding: 0 3em;
 			}
 			h2 {
-		   		font-size: 1.8em;
+		   		font-size: 1.7em;
 			}
 		}  
     }
+    @include grid-media($medium-grid){
+    }
     @include grid-media($small-grid){
 	  	.postContent {
-		 	&.heading {
-		   	 margin-top: -45%;
-		   	 padding: 2em 0.5em;
+	  	 	margin-top: -50%;
+		 	.heading {
+    			padding: 2em 0.5em 0;
 			} 
-			&.main {
+			.main {
 				padding: 0 0.5em;
 			}
 		}    
@@ -146,6 +151,12 @@
     }
     h3 {
     	text-align: center;
+    }
+    @include grid-media($medium-grid) {
+        @include grid-collapse;
+	    &.feed {
+	    	display: none;
+	    }
     }
 }
 
@@ -172,4 +183,31 @@
     @include grid-media($small-grid){
     	padding: 3em 1em;   
     }
+}
+
+
+.mobile {
+	h3 {
+		font-size: 1em;
+    	color: #fec430;
+	}
+	hr {
+	    color: #fec430 !important;
+	    border: 1px solid;
+	}
+}
+
+
+.article-gallery {
+  width: 100%;
+  height: 55vh;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-x: repeat(100%);
+  scroll-snap-destination: 0 0;
+  .scroll-item {
+	  display: inline-block;
+	  position: relative;
+	 }
 }

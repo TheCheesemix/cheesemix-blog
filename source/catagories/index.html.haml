@@ -1,0 +1,11 @@
+
+%article.postFeedContainer.hero
+	.grid--twos
+		- all_articles[0...1].each do |article|
+			= partial "hero", locals: { article: article }
+
+
+%article.postFeedContainer#article
+	.grid--twos		
+		- category_feed[1...6].each do |category|
+			= partial "category", locals: { category: category }

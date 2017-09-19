@@ -50,10 +50,7 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-page "/layouts/feed.html", :layout => "feed"
-
-page "../layouts/post.html", :layout => "post"
-
+  
 
 data.site.blogPost.each do |article|
   page "/#{article[1][:slug]}.html", proxy: '/post/show.html', ignore: true do
@@ -76,8 +73,9 @@ data.site.blogPost.each do |article|
   end
 end
 
-activate :blog do |blog|
-  blog.taglink = "categories/{data.site.blogPost.tags}.html"
+data.site.blogPost.each do |catagory|
+    @catagory     = catagory[1]
+    @category    = catagory[1][:blogCategory]
 end
 
 # Disable warnings
@@ -108,7 +106,7 @@ end
 # ------------------------------------------------------------------------------
 
 activate :contentful do |f|
-  f.access_token  = "dc4bbaef77a67..."
+  f.access_token  = "dc4bbaef77a67ae520045ad0942a81663a1bddcc7dc6dabcf84b53d4e8c3a558"
   f.space = {site:"meg1xu0a1no8"}
   f.content_types = {blogPost: "blogPost"}
 
@@ -186,8 +184,15 @@ end
 # ------------------------------------------------------------------------------
 
 helpers do
+
   def title
+    data.site.blogPost.first[1].title[0]
   end
+
+  #solution for category page sorting: 
+  #https://stackoverflow.com/questions/17341909/middleman-blog-selecting-articles-based-on-category-in-frontmatter
+  
+  
 
   def author
     data.site.blogPost.first[1].author[0]
@@ -195,6 +200,10 @@ helpers do
 
   def sort_by_most_recent(posts)
     posts.sort_by { |key| key["date"] }.reverse
+  end
+
+  def sort_by_category(posts)
+    posts.sort_by { |key| key["blogCategory"] } 
   end
 
   def recent_articles
@@ -232,6 +241,3 @@ helpers do
 end
 
  
-
-
-

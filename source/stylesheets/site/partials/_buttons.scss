@@ -19,10 +19,16 @@
         background-color: #282538;
         width: 100%;
     }
-    &.white {
-        background-color: #ffffff;
-        color: #0f0d17;
-        width: 95%;
+    &.news-mobile {
+        background: #192cb2;
+        width: 100%;
+        padding: .5em 1em;
+        font-size: 1rem;
+        &:hover {
+            background-color: #5960aa;
+            border: 1px solid #747474;
+            color: #747474;
+        }
     }
     &.home {
         background-color: #282538;

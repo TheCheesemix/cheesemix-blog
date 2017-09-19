@@ -1,6 +1,6 @@
 - article_data = article
 
-%article.grid-hero-single-column.feed{itemscope: '', itemtype: 'http://schema.org/Article', :data => { :file => "/#{article_data[:slug]}/", :target => "article" }}
+%article.grid-hero-single-column{itemscope: '', itemtype: 'http://schema.org/Article', :data => { :file => "/#{article_data[:slug]}/", :target => "article" }}
 	.featureInner
 		.featureImage.hero
 			= link_to "/#{article_data[:slug]}/" do
@@ -13,8 +13,11 @@
 						%p
 							%small
 								%span
+									= [@category].join
+									|
 									%span.eta
-								read time
+								read
+
 
 						%h1{itemprop: 'headline'}
 							= article_data[:title]

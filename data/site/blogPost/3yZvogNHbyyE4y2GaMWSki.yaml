@@ -1,12 +1,12 @@
 ---
 :id: 3yZvogNHbyyE4y2GaMWSki
-:slug: hero-article-test-cheesy-blog
+:slug: hero-article-test-cheesy-blog-test-build
 :heroArticle: true
 :featuredImage:
   :title: Heading Template
   :url: "//images.contentful.com/meg1xu0a1no8/2VexQYZkPmQagYcw8yS0Qw/7e51b0ebf92bd725cb1b16482ba3e761/Heading_Template.jpg"
-:authorName: Duncan Forbes
-:title: Hero Article Test Cheesy Blog
+:authorName: Hero Article Test Cheesy Blog [ Test Build]
+:title: Hero Article Test Cheesy Blog [Test Build]
 :subtitle: Something Dam Awesome
 :addBlogMedia:
 - :title: Pear Lord London 1

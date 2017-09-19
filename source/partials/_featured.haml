@@ -5,7 +5,9 @@
 		.featureImage
 			= link_to "/#{article_data[:slug]}/" do
 				- if article_data[:featuredImage].present?
-					= image_tag "#{article_data[:featuredImage][:url]}", class: 'feature-image', itemprop: 'image'
+					= image_tag "#{article_data[:featuredImage][:url]}", class: 'feature-image', alt: "#{article_data[:title]}", itemprop: 'image'
+					%meta{ :itemprop => "url", :content => "#{article_data[:featuredImage][:url]}"}
+
 		.feature-container
 			= link_to "/#{article_data[:slug]}/" do
 				.featureContent
@@ -13,8 +15,10 @@
 						%p
 							%small
 								%span
+									= [@category].join
+									|
 									%span.eta
-								read time
+								read
 
 						%h1{itemprop: 'headline'}
 							= article_data[:title]
@@ -28,9 +32,3 @@
 						.authorNameMicro{itemscope: '', itemtype: 'http://schema.org/Person', itemprop: 'author'}
 							%p{itemprop: 'name'}
 								= article_data[:author][:name]
-
-
-
-
-.grid-one-single-column.newsletter{itemscope: '', itemtype: 'http://schema.org/Article'}
-	= partial ('newsletterForm')
