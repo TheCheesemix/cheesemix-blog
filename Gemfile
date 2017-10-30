@@ -2,16 +2,14 @@
 # the following line to use "http://" instead
 source 'https://rubygems.org'
 
-
+gem "middleman", "~>3.3.12"
+gem 'middleman-sync', '~> 3.0.12'
 
 gem 'neat', '~> 2.0.0'
 gem 'bourbon', '~> 4.3.4'
+gem 'neat', '~> 2.0.0'
 gem 'sass', '~> 3.4.23'
 
-
-gem "middleman", "~>3.3.12"
-
-gem 'middleman-sync', '~> 3.0.12'
 
 gem "middleman-blog"
 
@@ -35,4 +33,3 @@ gem 'middleman-disqus'
 gem 'algoliasearch'
 
 gem 'html-hierarchy-extractor', '~> 1.0'
-

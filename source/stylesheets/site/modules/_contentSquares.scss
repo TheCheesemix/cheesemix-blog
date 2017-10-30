@@ -24,8 +24,13 @@ $grid--twos: (
     padding-left: 0px;
     padding-right: 0px;
     max-width: 1270px;
+    width: 100%;
     &.hero {
         max-width: 1440px;
+        &.home {
+            max-width: 975px;
+            margin-top: 2vh;
+        }
     }
     @include grid-media($medium-grid) {
         @include grid-collapse;
@@ -55,7 +60,7 @@ $grid--twos: (
     }
     @include grid-media($small-grid){
     @include grid-collapse;
-        padding: 0px 20px 0px;
+        padding: 2vh 20px 0px;
     }
 }
 
@@ -121,19 +126,22 @@ $grid--twos: (
         text-align: center;
         position: relative;
         z-index: 1;
+        background-color: #000;
+        border-radius: 10px 10px 0 0;
             &.hero {
                 max-width: 1800px;    
             }
             img {
                 width: 100%;
-                border-radius: 10px;
+                border-radius: 10px 10px 0 0;
+            &:hover {
+                opacity: 0.5;
+            }
         }
     }
     .feature-container {
         margin-left: auto;
         margin-right: auto;
-        padding-left: 15px;
-        padding-right: 15px;
         width: 100%;
         white-space: normal;
         
@@ -168,7 +176,8 @@ $grid--twos: (
             border-bottom: 3px solid #f2f2f2;
             position: relative;
             z-index: 2;
-            margin-top: -10%;
+            margin-top: -5%;
+            padding-bottom: 1.2vh;
             border-radius: 0 0 10px 10px;
             padding: 10px 20px 20px;
             display: -webkit-box;
@@ -212,7 +221,7 @@ $grid--twos: (
                 &.hero {
                     h1 {
                         font-family: 'Spectral', Helvetica, Arial, sans-serif;
-                        font-size: 3rem;
+                        font-size: 2rem;
                         line-height: 1.3;
                     }                
                 }
@@ -227,7 +236,7 @@ $grid--twos: (
                     margin: 0px;
                     color: #000;
                     color: #464646;
-                    font-size: 1.3em;
+                    font-size: 1.1em;
                     line-height: 1.5rem;
                 }
                 @include grid-media($medium-large-grid){
@@ -237,10 +246,10 @@ $grid--twos: (
                         } 
                     }   
                     h1 {
-                        font-size: 1.8rem;
+                        font-size: 1.3rem;
                     }
                     p {
-                        font-size: 1.1rem;
+                        font-size: 1rem;
                     }
                  }
                 @include grid-media($small-grid){
