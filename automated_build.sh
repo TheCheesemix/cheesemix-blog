@@ -11,7 +11,7 @@ git clone https://github.com/thecheesemix/cheesemix-blog build
 cd $CWD
 bundle exec middleman contentful --rebuild
 
-au_# Push newly built repository
+# Push newly built repository
 cp -r $CWD/build/* /tmp/build
 
 cd /tmp/build
