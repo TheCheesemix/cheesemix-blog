@@ -11,4 +11,3 @@ rsync:
 #run sync command for google storage
 
 test:
-	gsutil -m rsync -d -r build gs://stageing_blog.cheesemix.com
