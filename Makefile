@@ -5,7 +5,7 @@ site_build:
 
 #run sync command for google storage
 rsync:
-	gsutil -m rsync -d -r build gs://stageing_blog.cheesemix.com
+	gsutil cp -r build gs://stageing_blog.cheesemix.com
 
 	
 #run sync command for google storage
