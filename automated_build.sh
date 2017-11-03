@@ -12,9 +12,9 @@ cd $CWD
 bundle exec middleman contentful --rebuild
 
 # Push newly built repository
-cp -r $CWD/build/* /tmp/build
+cp -r $CWD/build/* ./build
 
-cd /tmp/build
+cd ./build
 
 git config --global user.email "daf@cappui.com"
 git config --global user.name "duncanaforbes"
