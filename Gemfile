@@ -7,7 +7,6 @@ gem 'middleman-sync', '~> 3.0.12'
 
 gem 'neat', '~> 2.0.0'
 gem 'bourbon', '~> 4.3.4'
-gem 'neat', '~> 2.0.0'
 gem 'sass', '~> 3.4.23'
 
 

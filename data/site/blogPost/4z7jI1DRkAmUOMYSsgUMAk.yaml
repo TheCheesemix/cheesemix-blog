@@ -1,0 +1,24 @@
+---
+:id: 4z7jI1DRkAmUOMYSsgUMAk
+:slug: testy-testy
+:heroArticle: true
+:featuredArticle: false
+:featuredImage:
+  :title: " MG 6550"
+  :url: "//images.contentful.com/meg1xu0a1no8/3UfIEsSBiMqy26Y8gIEIyY/6022b2a848a274467f169429f32381fe/_MG_6550.jpg"
+:authorName: Testing my automation for cheesemix
+:title: This a tested automation through google cloud
+:subtitle: Test me I am a hamster
+:body: Hamster loving super hero
+:blogCategory:
+- recipes
+:author:
+  :id: xwmtbVfGSccEMGO8ya6ie
+  :name: Duncan Forbes
+  :profilePhoto:
+    :title: Duncan Forbes
+    :url: "//images.contentful.com/meg1xu0a1no8/58GYLy3SX6ASWKiWku6UeY/4d27ac3ca305a46b3dacf7969e73fa00/Y7t8r-b5.jpg"
+  :biography: Duncan a co-founder of cheeemix
+  :twitterProfile: https://twitter.com/duncanaforbes
+:comments: false
+:date: !ruby/object:DateTime 2017-11-03 00:00:00.000000000 Z
