@@ -1,5 +1,5 @@
 steps:
   - name: gcr.io/cloud-builders/gsutil
-    args: ["-m", "rsync", "-r", "-c", "-d", "build", "gs://stageing_blog.cheesemix.com"]
+    args: ["-m", "rsync", "-r", "-c", "-d", "./build", "gs://stageing_blog.cheesemix.com"]
 
 
