@@ -11,13 +11,14 @@
 	position: relative;
     z-index: 1;
 	.headingImage { 
-		max-width: 1440px;
+		max-width: 975px;
 	    margin: 0 auto;
 	    min-height: 200px;
 	    text-align: center;
 	    position: relative;
 	    img {
-	    	width: 100%
+	    	width: 100%;
+	    	border-radius: 5px;
 	    }
 	}
 }
@@ -59,7 +60,7 @@
     max-width: 1008px;
     margin-left: auto;
     margin-right: auto;
-    padding: 7em 0;
+    padding: 0 0;
 	&.stream {
 	    width: 100%;
 	   	max-width: none;
@@ -78,7 +79,7 @@
 	    background: #f9f9f9;
 	    position: relative;
 	    z-index: 10;
-	    margin-top: -25%;
+	    margin-top: 0;
     	.heading {
 		    text-align: center;
 		    padding: 2.5em 5em 2em;

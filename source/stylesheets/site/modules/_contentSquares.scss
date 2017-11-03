@@ -23,12 +23,10 @@ $grid--twos: (
     margin-right: auto;
     padding-left: 0px;
     padding-right: 0px;
-    max-width: 1270px;
+    max-width: 975px;
     width: 100%;
     &.hero {
-        max-width: 1440px;
         &.home {
-            max-width: 975px;
             margin-top: 2vh;
         }
     }
@@ -121,18 +119,16 @@ $grid--twos: (
 
 .featureInner {
     .featureImage {
-        max-width: 1440px;
+        max-width: 975px;
         margin: 0 auto;
         text-align: center;
         position: relative;
         z-index: 1;
         background-color: #000;
         border-radius: 10px 10px 0 0;
-            &.hero {
-                max-width: 1800px;    
-            }
             img {
                 width: 100%;
+                max-width: 975px;
                 border-radius: 10px 10px 0 0;
             &:hover {
                 opacity: 0.5;
@@ -143,8 +139,8 @@ $grid--twos: (
         margin-left: auto;
         margin-right: auto;
         width: 100%;
-        white-space: normal;
-        
+        max-width: 975px;
+        white-space: normal;      
         &:before, &:hover:after {
         -webkit-transform: scaleX(1);
         transform: scaleX(1);
